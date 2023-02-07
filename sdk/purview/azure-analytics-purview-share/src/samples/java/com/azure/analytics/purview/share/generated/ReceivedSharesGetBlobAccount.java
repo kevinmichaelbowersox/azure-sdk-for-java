@@ -21,7 +21,7 @@ public class ReceivedSharesGetBlobAccount {
         // BEGIN:com.azure.analytics.purview.share.generated.receivedsharesget.receivedsharesgetblobaccount
         RequestOptions requestOptions = new RequestOptions();
         Response<BinaryData> response =
-                receivedSharesClient.getWithResponse("0D67B9C8-A6C6-4990-9EDE-12EA059D3002", requestOptions);
+                receivedSharesClient.getReceivedShareWithResponse("0D67B9C8-A6C6-4990-9EDE-12EA059D3002", requestOptions);
         // END:com.azure.analytics.purview.share.generated.receivedsharesget.receivedsharesgetblobaccount
     }
 }

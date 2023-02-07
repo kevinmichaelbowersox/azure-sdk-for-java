@@ -24,7 +24,7 @@ public class SentSharesCreateUserInvitation {
                         "{\"invitationKind\":\"User\",\"properties\":{\"expirationDate\":\"2025-07-21T23:52:00.7691109Z\",\"notify\":true,\"targetEmail\":\"testReceiver@microsoft.com\"}}");
         RequestOptions requestOptions = new RequestOptions();
         Response<BinaryData> response =
-                sentSharesClient.createInvitationWithResponse(
+                sentSharesClient.createSentShareInvitationWithResponse(
                         "FF4A2AAE-8755-47BB-9C00-A774B5A7006E",
                         "9F154FA4-93D1-426B-A908-A9CAC7192B21",
                         sentShareInvitation,

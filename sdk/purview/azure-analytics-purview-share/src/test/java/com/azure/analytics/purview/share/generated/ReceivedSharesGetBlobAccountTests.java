@@ -17,7 +17,7 @@ public final class ReceivedSharesGetBlobAccountTests extends PurviewShareClientT
     public void testReceivedSharesGetBlobAccountTests() {
         RequestOptions requestOptions = new RequestOptions();
         Response<BinaryData> response =
-                receivedSharesClient.getWithResponse("0D67B9C8-A6C6-4990-9EDE-12EA059D3002", requestOptions);
+                receivedSharesClient.getReceivedShareWithResponse("0D67B9C8-A6C6-4990-9EDE-12EA059D3002", requestOptions);
         Assertions.assertEquals(200, response.getStatusCode());
         Assertions.assertEquals("Wed, 12 July 2022 18:04:32 GMT", response.getHeaders().get("Date").getValue());
         Assertions.assertEquals(

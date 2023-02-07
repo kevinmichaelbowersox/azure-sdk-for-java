@@ -21,7 +21,7 @@ public class SentSharesListInvitations {
         // BEGIN:com.azure.analytics.purview.share.generated.sentshareslistinvitations.sentshareslistinvitations
         RequestOptions requestOptions = new RequestOptions().addQueryParam("filter", "Name eq 'testName'");
         PagedIterable<BinaryData> response =
-                sentSharesClient.listInvitations("FF4A2AAE-8755-47BB-9C00-A774B5A7006E", requestOptions);
+                sentSharesClient.listSentShareInvitations("FF4A2AAE-8755-47BB-9C00-A774B5A7006E", requestOptions);
         // END:com.azure.analytics.purview.share.generated.sentshareslistinvitations.sentshareslistinvitations
     }
 }

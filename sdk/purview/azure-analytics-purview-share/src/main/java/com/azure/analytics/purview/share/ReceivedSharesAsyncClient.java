@@ -59,7 +59,7 @@ public final class ReceivedSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Mono<Response<BinaryData>> getWithResponse(String receivedShareId, RequestOptions requestOptions) {
+    public Mono<Response<BinaryData>> getReceivedShareWithResponse(String receivedShareId, RequestOptions requestOptions) {
         return this.serviceClient.getWithResponseAsync(receivedShareId, requestOptions);
     }
 
@@ -97,7 +97,7 @@ public final class ReceivedSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public PollerFlux<BinaryData, BinaryData> beginCreate(
+    public PollerFlux<BinaryData, BinaryData> beginCreateReceivedShare(
             String receivedShareId, BinaryData receivedShare, RequestOptions requestOptions) {
         return this.serviceClient.beginCreateAsync(receivedShareId, receivedShare, requestOptions);
     }
@@ -117,7 +117,7 @@ public final class ReceivedSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public PollerFlux<BinaryData, Void> beginDelete(String receivedShareId, RequestOptions requestOptions) {
+    public PollerFlux<BinaryData, Void> beginDeleteReceivedShare(String receivedShareId, RequestOptions requestOptions) {
         return this.serviceClient.beginDeleteAsync(receivedShareId, requestOptions);
     }
 
@@ -157,7 +157,7 @@ public final class ReceivedSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedFlux<BinaryData> listAttached(String referenceName, RequestOptions requestOptions) {
+    public PagedFlux<BinaryData> listAttachedReceivedShares(String referenceName, RequestOptions requestOptions) {
         return this.serviceClient.listAttachedAsync(referenceName, requestOptions);
     }
 
@@ -196,7 +196,7 @@ public final class ReceivedSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedFlux<BinaryData> listDetached(RequestOptions requestOptions) {
+    public PagedFlux<BinaryData> listDetachedReceivedShares(RequestOptions requestOptions) {
         return this.serviceClient.listDetachedAsync(requestOptions);
     }
 

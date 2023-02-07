@@ -21,7 +21,7 @@ public class SentSharesNotifyUserInvitation {
         // BEGIN:com.azure.analytics.purview.share.generated.sentsharesnotifyuserinvitation.sentsharesnotifyuserinvitation
         RequestOptions requestOptions = new RequestOptions();
         Response<BinaryData> response =
-                sentSharesClient.notifyUserInvitationWithResponse(
+                sentSharesClient.notifyUserSentShareInvitationWithResponse(
                         "FF4A2AAE-8755-47BB-9C00-A774B5A7006E", "9F154FA4-93D1-426B-A908-A9CAC7192B21", requestOptions);
         // END:com.azure.analytics.purview.share.generated.sentsharesnotifyuserinvitation.sentsharesnotifyuserinvitation
     }

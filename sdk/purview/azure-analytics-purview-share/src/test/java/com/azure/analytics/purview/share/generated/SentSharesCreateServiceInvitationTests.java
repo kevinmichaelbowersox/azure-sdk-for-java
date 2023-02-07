@@ -20,7 +20,7 @@ public final class SentSharesCreateServiceInvitationTests extends PurviewShareCl
                         "{\"invitationKind\":\"Service\",\"properties\":{\"expirationDate\":null,\"targetActiveDirectoryId\":\"5DAE1226-9FAA-4D71-B8D4-87B81DFF672E\",\"targetObjectId\":\"EFA02830-BB7A-4586-B615-A6DFF19FEBBF\"}}");
         RequestOptions requestOptions = new RequestOptions();
         Response<BinaryData> response =
-                sentSharesClient.createInvitationWithResponse(
+                sentSharesClient.createSentShareInvitationWithResponse(
                         "FF4A2AAE-8755-47BB-9C00-A774B5A7006E",
                         "9F154FA4-93D1-426B-A908-A9CAC7192B21",
                         sentShareInvitation,

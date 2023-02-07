@@ -57,8 +57,8 @@ public final class ReceivedSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<BinaryData> getWithResponse(String receivedShareId, RequestOptions requestOptions) {
-        return this.client.getWithResponse(receivedShareId, requestOptions).block();
+    public Response<BinaryData> getReceivedShareWithResponse(String receivedShareId, RequestOptions requestOptions) {
+        return this.client.getReceivedShareWithResponse(receivedShareId, requestOptions).block();
     }
 
     /**
@@ -95,9 +95,9 @@ public final class ReceivedSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<BinaryData, BinaryData> beginCreate(
+    public SyncPoller<BinaryData, BinaryData> beginCreateReceivedShare(
             String receivedShareId, BinaryData receivedShare, RequestOptions requestOptions) {
-        return this.client.beginCreate(receivedShareId, receivedShare, requestOptions).getSyncPoller();
+        return this.client.beginCreateReceivedShare(receivedShareId, receivedShare, requestOptions).getSyncPoller();
     }
 
     /**
@@ -115,8 +115,8 @@ public final class ReceivedSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<BinaryData, Void> beginDelete(String receivedShareId, RequestOptions requestOptions) {
-        return this.client.beginDelete(receivedShareId, requestOptions).getSyncPoller();
+    public SyncPoller<BinaryData, Void> beginDeleteReceivedShare(String receivedShareId, RequestOptions requestOptions) {
+        return this.client.beginDeleteReceivedShare(receivedShareId, requestOptions).getSyncPoller();
     }
 
     /**
@@ -155,8 +155,8 @@ public final class ReceivedSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<BinaryData> listAttached(String referenceName, RequestOptions requestOptions) {
-        return new PagedIterable<>(this.client.listAttached(referenceName, requestOptions));
+    public PagedIterable<BinaryData> listAttachedReceivedShares(String referenceName, RequestOptions requestOptions) {
+        return new PagedIterable<>(this.client.listAttachedReceivedShares(referenceName, requestOptions));
     }
 
     /**
@@ -194,8 +194,8 @@ public final class ReceivedSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<BinaryData> listDetached(RequestOptions requestOptions) {
-        return new PagedIterable<>(this.client.listDetached(requestOptions));
+    public PagedIterable<BinaryData> listDetachedReceivedShares(RequestOptions requestOptions) {
+        return new PagedIterable<>(this.client.listDetachedReceivedShares(requestOptions));
     }
 
     /**

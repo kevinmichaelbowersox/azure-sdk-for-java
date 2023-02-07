@@ -71,7 +71,7 @@ public final class SentSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedFlux<BinaryData> list(String referenceName, RequestOptions requestOptions) {
+    public PagedFlux<BinaryData> listSentShares(String referenceName, RequestOptions requestOptions) {
         return this.serviceClient.listAsync(referenceName, requestOptions);
     }
 
@@ -99,7 +99,7 @@ public final class SentSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Mono<Response<BinaryData>> getWithResponse(String sentShareId, RequestOptions requestOptions) {
+    public Mono<Response<BinaryData>> getSentShareWithResponse(String sentShareId, RequestOptions requestOptions) {
         return this.serviceClient.getWithResponseAsync(sentShareId, requestOptions);
     }
 
@@ -137,7 +137,7 @@ public final class SentSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public PollerFlux<BinaryData, BinaryData> beginCreate(
+    public PollerFlux<BinaryData, BinaryData> beginCreateSentShare(
             String sentShareId, BinaryData sentShare, RequestOptions requestOptions) {
         return this.serviceClient.beginCreateAsync(sentShareId, sentShare, requestOptions);
     }
@@ -157,7 +157,7 @@ public final class SentSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public PollerFlux<BinaryData, Void> beginDelete(String sentShareId, RequestOptions requestOptions) {
+    public PollerFlux<BinaryData, Void> beginDeleteSentShare(String sentShareId, RequestOptions requestOptions) {
         return this.serviceClient.beginDeleteAsync(sentShareId, requestOptions);
     }
 
@@ -197,7 +197,7 @@ public final class SentSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedFlux<BinaryData> listInvitations(String sentShareId, RequestOptions requestOptions) {
+    public PagedFlux<BinaryData> listSentShareInvitations(String sentShareId, RequestOptions requestOptions) {
         return this.serviceClient.listInvitationsAsync(sentShareId, requestOptions);
     }
 
@@ -226,7 +226,7 @@ public final class SentSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Mono<Response<BinaryData>> getInvitationWithResponse(
+    public Mono<Response<BinaryData>> getSentShareInvitationWithResponse(
             String sentShareId, String sentShareInvitationId, RequestOptions requestOptions) {
         return this.serviceClient.getInvitationWithResponseAsync(sentShareId, sentShareInvitationId, requestOptions);
     }
@@ -267,7 +267,7 @@ public final class SentSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Mono<Response<BinaryData>> createInvitationWithResponse(
+    public Mono<Response<BinaryData>> createSentShareInvitationWithResponse(
             String sentShareId,
             String sentShareInvitationId,
             BinaryData sentShareInvitation,
@@ -292,7 +292,7 @@ public final class SentSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public PollerFlux<BinaryData, Void> beginDeleteInvitation(
+    public PollerFlux<BinaryData, Void> beginDeleteSentShareInvitation(
             String sentShareId, String sentShareInvitationId, RequestOptions requestOptions) {
         return this.serviceClient.beginDeleteInvitationAsync(sentShareId, sentShareInvitationId, requestOptions);
     }
@@ -321,7 +321,7 @@ public final class SentSharesAsyncClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Mono<Response<BinaryData>> notifyUserInvitationWithResponse(
+    public Mono<Response<BinaryData>> notifyUserSentShareInvitationWithResponse(
             String sentShareId, String sentShareInvitationId, RequestOptions requestOptions) {
         return this.serviceClient.notifyUserInvitationWithResponseAsync(
                 sentShareId, sentShareInvitationId, requestOptions);

@@ -21,7 +21,7 @@ public class SentSharesDelete {
         // BEGIN:com.azure.analytics.purview.share.generated.sentsharesdelete.sentsharesdelete
         RequestOptions requestOptions = new RequestOptions();
         SyncPoller<BinaryData, Void> response =
-                sentSharesClient.beginDelete("FF4A2AAE-8755-47BB-9C00-A774B5A7006E", requestOptions);
+                sentSharesClient.beginDeleteSentShare("FF4A2AAE-8755-47BB-9C00-A774B5A7006E", requestOptions);
         // END:com.azure.analytics.purview.share.generated.sentsharesdelete.sentsharesdelete
     }
 }

@@ -24,7 +24,7 @@ public class SentSharesCreate {
                         "{\"properties\":{\"description\":\"description\",\"artifact\":{\"properties\":{\"paths\":[{\"containerName\":\"container1\",\"receiverPath\":\"SharedFile.txt\",\"senderPath\":\"directory/file.txt\"}]},\"storeKind\":\"AdlsGen2Account\",\"storeReference\":{\"type\":\"ArmResourceReference\",\"referenceName\":\"/subscriptions/de06c3a0-4610-4ca0-8cbb-bbdac204bd65/resourceGroups/sender-storage-rg/providers/Microsoft.Storage/storageAccounts/providerstorage\"}},\"displayName\":\"sentShare1\"},\"shareKind\":\"InPlace\"}");
         RequestOptions requestOptions = new RequestOptions();
         SyncPoller<BinaryData, BinaryData> response =
-                sentSharesClient.beginCreate("FF4A2AAE-8755-47BB-9C00-A774B5A7006E", sentShare, requestOptions);
+                sentSharesClient.beginCreateSentShare("FF4A2AAE-8755-47BB-9C00-A774B5A7006E", sentShare, requestOptions);
         // END:com.azure.analytics.purview.share.generated.sentsharescreate.sentsharescreate
     }
 }

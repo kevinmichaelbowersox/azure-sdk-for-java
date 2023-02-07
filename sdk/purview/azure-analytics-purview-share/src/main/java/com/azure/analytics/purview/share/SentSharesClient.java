@@ -69,8 +69,8 @@ public final class SentSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<BinaryData> list(String referenceName, RequestOptions requestOptions) {
-        return new PagedIterable<>(this.client.list(referenceName, requestOptions));
+    public PagedIterable<BinaryData> listSentShares(String referenceName, RequestOptions requestOptions) {
+        return new PagedIterable<>(this.client.listSentShares(referenceName, requestOptions));
     }
 
     /**
@@ -97,8 +97,8 @@ public final class SentSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<BinaryData> getWithResponse(String sentShareId, RequestOptions requestOptions) {
-        return this.client.getWithResponse(sentShareId, requestOptions).block();
+    public Response<BinaryData> getSentShareWithResponse(String sentShareId, RequestOptions requestOptions) {
+        return this.client.getSentShareWithResponse(sentShareId, requestOptions).block();
     }
 
     /**
@@ -135,9 +135,9 @@ public final class SentSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<BinaryData, BinaryData> beginCreate(
+    public SyncPoller<BinaryData, BinaryData> beginCreateSentShare(
             String sentShareId, BinaryData sentShare, RequestOptions requestOptions) {
-        return this.client.beginCreate(sentShareId, sentShare, requestOptions).getSyncPoller();
+        return this.client.beginCreateSentShare(sentShareId, sentShare, requestOptions).getSyncPoller();
     }
 
     /**
@@ -155,8 +155,8 @@ public final class SentSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<BinaryData, Void> beginDelete(String sentShareId, RequestOptions requestOptions) {
-        return this.client.beginDelete(sentShareId, requestOptions).getSyncPoller();
+    public SyncPoller<BinaryData, Void> beginDeleteSentShare(String sentShareId, RequestOptions requestOptions) {
+        return this.client.beginDeleteSentShare(sentShareId, requestOptions).getSyncPoller();
     }
 
     /**
@@ -195,8 +195,8 @@ public final class SentSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<BinaryData> listInvitations(String sentShareId, RequestOptions requestOptions) {
-        return new PagedIterable<>(this.client.listInvitations(sentShareId, requestOptions));
+    public PagedIterable<BinaryData> listSentShareInvitations(String sentShareId, RequestOptions requestOptions) {
+        return new PagedIterable<>(this.client.listSentShareInvitations(sentShareId, requestOptions));
     }
 
     /**
@@ -224,9 +224,9 @@ public final class SentSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<BinaryData> getInvitationWithResponse(
+    public Response<BinaryData> getSentShareInvitationWithResponse(
             String sentShareId, String sentShareInvitationId, RequestOptions requestOptions) {
-        return this.client.getInvitationWithResponse(sentShareId, sentShareInvitationId, requestOptions).block();
+        return this.client.getSentShareInvitationWithResponse(sentShareId, sentShareInvitationId, requestOptions).block();
     }
 
     /**
@@ -264,13 +264,13 @@ public final class SentSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<BinaryData> createInvitationWithResponse(
+    public Response<BinaryData> createSentShareInvitationWithResponse(
             String sentShareId,
             String sentShareInvitationId,
             BinaryData sentShareInvitation,
             RequestOptions requestOptions) {
         return this.client
-                .createInvitationWithResponse(sentShareId, sentShareInvitationId, sentShareInvitation, requestOptions)
+                .createSentShareInvitationWithResponse(sentShareId, sentShareInvitationId, sentShareInvitation, requestOptions)
                 .block();
     }
 
@@ -290,9 +290,9 @@ public final class SentSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<BinaryData, Void> beginDeleteInvitation(
+    public SyncPoller<BinaryData, Void> beginDeleteSentShareInvitation(
             String sentShareId, String sentShareInvitationId, RequestOptions requestOptions) {
-        return this.client.beginDeleteInvitation(sentShareId, sentShareInvitationId, requestOptions).getSyncPoller();
+        return this.client.beginDeleteSentShareInvitation(sentShareId, sentShareInvitationId, requestOptions).getSyncPoller();
     }
 
     /**
@@ -318,8 +318,8 @@ public final class SentSharesClient {
      */
     @Generated
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<BinaryData> notifyUserInvitationWithResponse(
+    public Response<BinaryData> notifyUserSentShareInvitationWithResponse(
             String sentShareId, String sentShareInvitationId, RequestOptions requestOptions) {
-        return this.client.notifyUserInvitationWithResponse(sentShareId, sentShareInvitationId, requestOptions).block();
+        return this.client.notifyUserSentShareInvitationWithResponse(sentShareId, sentShareInvitationId, requestOptions).block();
     }
 }

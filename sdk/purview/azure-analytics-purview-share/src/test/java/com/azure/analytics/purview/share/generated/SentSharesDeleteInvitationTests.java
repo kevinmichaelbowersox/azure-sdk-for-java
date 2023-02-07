@@ -18,7 +18,7 @@ public final class SentSharesDeleteInvitationTests extends PurviewShareClientTes
     public void testSentSharesDeleteInvitationTests() {
         RequestOptions requestOptions = new RequestOptions();
         SyncPoller<BinaryData, Void> response =
-                sentSharesClient.beginDeleteInvitation(
+                sentSharesClient.beginDeleteSentShareInvitation(
                         "FF4A2AAE-8755-47BB-9C00-A774B5A7006E", "9F154FA4-93D1-426B-A908-A9CAC7192B21", requestOptions);
         Assertions.assertEquals(
                 LongRunningOperationStatus.SUCCESSFULLY_COMPLETED, response.waitForCompletion().getStatus());

@@ -21,7 +21,7 @@ public class ReceivedSharesListAttached {
         // BEGIN:com.azure.analytics.purview.share.generated.receivedshareslistattached.receivedshareslistattached
         RequestOptions requestOptions = new RequestOptions().addQueryParam("filter", "Name eq 'testName'");
         PagedIterable<BinaryData> response =
-                receivedSharesClient.listAttached(
+                receivedSharesClient.listAttachedReceivedShares(
                         "/subscriptions/4D8FD81D-431D-4B1D-B46C-C770CFC034FC/resourceGroups/contoso-rg/providers/Microsoft.Storage/storageAccounts/blobAccount",
                         requestOptions);
         // END:com.azure.analytics.purview.share.generated.receivedshareslistattached.receivedshareslistattached

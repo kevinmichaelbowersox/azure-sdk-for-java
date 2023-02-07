@@ -21,7 +21,7 @@ public final class ReceivedSharesUpdateAdlsGen2AccountTests extends PurviewShare
                         "{\"properties\":{\"displayName\":\"updatedReceivedShareNameAdls\",\"sink\":{\"properties\":{\"containerName\":\"receivingContainerAbc\",\"folder\":\"receivingFolderAbc\",\"mountPath\":\"pathAbc\"},\"storeKind\":\"AdlsGen2Account\",\"storeReference\":{\"type\":\"ArmResourceReference\",\"referenceName\":\"/subscriptions/4D8FD81D-431D-4B1D-B46C-C770CFC034FC/resourceGroups/contoso-rg/providers/Microsoft.Storage/storageAccounts/adlsAccount\"}}},\"shareKind\":\"InPlace\"}");
         RequestOptions requestOptions = new RequestOptions();
         SyncPoller<BinaryData, BinaryData> response =
-                receivedSharesClient.beginCreate("35E28F0E-DEA4-472F-84E4-5F1E45FB9937", receivedShare, requestOptions);
+                receivedSharesClient.beginCreateReceivedShare("35E28F0E-DEA4-472F-84E4-5F1E45FB9937", receivedShare, requestOptions);
         Assertions.assertEquals(
                 LongRunningOperationStatus.SUCCESSFULLY_COMPLETED, response.waitForCompletion().getStatus());
     }

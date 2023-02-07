@@ -21,7 +21,7 @@ public class SentSharesGet {
         // BEGIN:com.azure.analytics.purview.share.generated.sentsharesget.sentsharesget
         RequestOptions requestOptions = new RequestOptions();
         Response<BinaryData> response =
-                sentSharesClient.getWithResponse("FF4A2AAE-8755-47BB-9C00-A774B5A7006E", requestOptions);
+                sentSharesClient.getSentShareWithResponse("FF4A2AAE-8755-47BB-9C00-A774B5A7006E", requestOptions);
         // END:com.azure.analytics.purview.share.generated.sentsharesget.sentsharesget
     }
 }

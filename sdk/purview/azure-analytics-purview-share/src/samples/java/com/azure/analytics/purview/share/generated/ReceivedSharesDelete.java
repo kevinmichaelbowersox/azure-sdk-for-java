@@ -21,7 +21,7 @@ public class ReceivedSharesDelete {
         // BEGIN:com.azure.analytics.purview.share.generated.receivedsharesdelete.receivedsharesdelete
         RequestOptions requestOptions = new RequestOptions();
         SyncPoller<BinaryData, Void> response =
-                receivedSharesClient.beginDelete("0D67B9C8-A6C6-4990-9EDE-12EA059D3002", requestOptions);
+                receivedSharesClient.beginDeleteReceivedShare("0D67B9C8-A6C6-4990-9EDE-12EA059D3002", requestOptions);
         // END:com.azure.analytics.purview.share.generated.receivedsharesdelete.receivedsharesdelete
     }
 }

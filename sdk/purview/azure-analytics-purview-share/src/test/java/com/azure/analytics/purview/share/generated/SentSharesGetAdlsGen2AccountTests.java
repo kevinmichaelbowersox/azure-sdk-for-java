@@ -17,7 +17,7 @@ public final class SentSharesGetAdlsGen2AccountTests extends PurviewShareClientT
     public void testSentSharesGetAdlsGen2AccountTests() {
         RequestOptions requestOptions = new RequestOptions();
         Response<BinaryData> response =
-                sentSharesClient.getWithResponse("FF4A2AAE-8755-47BB-9C00-A774B5A7006E", requestOptions);
+                sentSharesClient.getSentShareWithResponse("FF4A2AAE-8755-47BB-9C00-A774B5A7006E", requestOptions);
         Assertions.assertEquals(200, response.getStatusCode());
         Assertions.assertEquals("Wed, 13 Sep 2017 18:04:32 GMT", response.getHeaders().get("Date").getValue());
         Assertions.assertEquals(

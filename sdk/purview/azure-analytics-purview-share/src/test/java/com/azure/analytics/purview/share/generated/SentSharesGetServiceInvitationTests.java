@@ -17,7 +17,7 @@ public final class SentSharesGetServiceInvitationTests extends PurviewShareClien
     public void testSentSharesGetServiceInvitationTests() {
         RequestOptions requestOptions = new RequestOptions();
         Response<BinaryData> response =
-                sentSharesClient.getInvitationWithResponse(
+                sentSharesClient.getSentShareInvitationWithResponse(
                         "FF4A2AAE-8755-47BB-9C00-A774B5A7006E", "9F154FA4-93D1-426B-A908-A9CAC7192B21", requestOptions);
         Assertions.assertEquals(200, response.getStatusCode());
         Assertions.assertEquals("Fri, 12 Aug 2022 18:04:32 GMT", response.getHeaders().get("Date").getValue());

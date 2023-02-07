@@ -21,7 +21,7 @@ public class SentSharesList {
         // BEGIN:com.azure.analytics.purview.share.generated.sentshareslist.sentshareslist
         RequestOptions requestOptions = new RequestOptions().addQueryParam("filter", "Name eq 'testName'");
         PagedIterable<BinaryData> response =
-                sentSharesClient.list(
+                sentSharesClient.listSentShares(
                         "/subscriptions/de06c3a0-4610-4ca0-8cbb-bbdac204bd65/resourceGroups/sender-storage-rg/providers/Microsoft.Storage/storageAccounts/providerstorage",
                         requestOptions);
         // END:com.azure.analytics.purview.share.generated.sentshareslist.sentshareslist

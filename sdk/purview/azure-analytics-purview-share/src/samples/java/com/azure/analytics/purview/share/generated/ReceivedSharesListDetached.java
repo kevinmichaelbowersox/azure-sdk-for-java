@@ -20,7 +20,7 @@ public class ReceivedSharesListDetached {
                         .buildClient();
         // BEGIN:com.azure.analytics.purview.share.generated.receivedshareslistdetached.receivedshareslistdetached
         RequestOptions requestOptions = new RequestOptions().addQueryParam("filter", "Name eq 'testName'");
-        PagedIterable<BinaryData> response = receivedSharesClient.listDetached(requestOptions);
+        PagedIterable<BinaryData> response = receivedSharesClient.listDetachedReceivedShares(requestOptions);
         // END:com.azure.analytics.purview.share.generated.receivedshareslistdetached.receivedshareslistdetached
     }
 }
