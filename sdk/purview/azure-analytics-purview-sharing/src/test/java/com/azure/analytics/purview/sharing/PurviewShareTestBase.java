@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+
 package com.azure.analytics.purview.sharing;
 
 import java.time.OffsetDateTime;

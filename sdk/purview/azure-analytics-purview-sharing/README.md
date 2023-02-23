@@ -1,15 +1,8 @@
-# Azure PurviewShareClient client library for Java
+# Azure Purview Sharing client library for Java
 
-Azure PurviewShareClient client library for Java.
+**Please rely heavily on the [service's documentation][product_documentation] and our [data-plane client docs][protocol_method] to use this library**
 
-This package contains Microsoft Azure PurviewShareClient client library.
-
-## Documentation
-
-Various documentation is available to help you get started
-
-- [API reference documentation][docs]
-- [Product documentation][product_documentation]
+[Source code][source_code] | [Package (Maven)][package] | [API reference documentation][docs] | [Product Documentation][share_product_documentation] | [Samples][samples_code]
 
 ## Getting started
 
@@ -17,6 +10,16 @@ Various documentation is available to help you get started
 
 - [Java Development Kit (JDK)][jdk] with version 8 or above
 - [Azure Subscription][azure_subscription]
+- An existing Microsoft Purview account.
+
+For more information about creating a Microsoft Purview account, see [here][create_azure_purview_account].
+
+## Documentation
+
+Various documentation is available to help you get started
+
+- [API reference documentation][docs]
+- [Product documentation][share_product_documentation]
 
 ### Adding the package to your product
 
@@ -34,16 +37,66 @@ Various documentation is available to help you get started
 
 [Azure Identity][azure_identity] package provides the default implementation for authenticating the client.
 
-## Key concepts
-
 ## Examples
 
-```java com.azure.analytics.purview.sharing.readme
+### Create a Sent Share Client
+```java com.azure.analytics.purview.sharing.createSentShareClient
 ```
 
-## Troubleshooting
+### Create a Sent Share
+```com.azure.analytics.purview.sharing.createSentShare
+```
 
-## Next steps
+### Get a Sent Share
+```com.azure.analytics.purview.sharing.getSentShare
+```
+
+### Get All Sent Shares
+```com.azure.analytics.purview.sharing.getAllSentShares
+```
+
+### Delete a Sent Share
+```com.azure.analytics.purview.sharing.deleteSentShare
+```
+
+### Send a Share Invitation to a User
+```com.azure.analytics.purview.sharing.createUserInvitation
+```
+
+### Send a Share Invitation to a Service
+```com.azure.analytics.purview.sharing.createServiceInvitation
+```
+
+### Get All Sent Share Invitations
+```com.azure.analytics.purview.sharing.getAllSentShareInvitations
+```
+
+### Get Sent Share Invitation
+```com.azure.analytics.purview.sharing.getSentShareInvitations
+```
+
+### Create a Received Share Client
+```com.azure.analytics.purview.sharing.createReceivedShareClient
+```
+
+### Get All Detached Received Shares
+```com.azure.analytics.purview.sharing.getAllDetachedReceivedShares
+```
+### Get Received Share
+```com.azure.analytics.purview.sharing.getReceivedShare
+```
+
+### Attach Received Shares
+```com.azure.analytics.purview.sharing.attachReceivedShare
+```
+
+### Get All Attached Received Shares
+```com.azure.analytics.purview.sharing.getAllAttachedReceivedShares
+```
+
+### Delete a Received Share
+```com.azure.analytics.purview.sharing.deleteReceivedShare
+```
 
 ## Contributing
 
@@ -56,8 +109,13 @@ For details on contributing to this repository, see the [contributing guide](htt
 1. Create new Pull Request
 
 <!-- LINKS -->
+[source_code]: https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/purview/azure-analytics-purview-sharing/src
+[package]: https://mvnrepository.com/artifact/com.azure/azure-analytics-purview-sharing
+[share_product_documentation]: https://docs.microsoft.com/azure/purview/concept-data-share
+[samples_code]: https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/purview/azure-analytics-purview-sharing/src/samples/
 [product_documentation]: https://azure.microsoft.com/services/
 [docs]: https://azure.github.io/azure-sdk-for-java/
 [jdk]: https://docs.microsoft.com/java/azure/jdk/
 [azure_subscription]: https://azure.microsoft.com/free/
 [azure_identity]: https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/identity/azure-identity
+[create_azure_purview_account]: https://docs.microsoft.com/azure/purview/create-catalog-portal
