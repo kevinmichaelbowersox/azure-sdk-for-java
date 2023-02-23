@@ -1,0 +1,20 @@
+package com.azure.analytics.purview.sharing.models;
+
+import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
+/** A sent share data transfer object. */
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "shareKind",
+        defaultImpl = SentShare.class)
+@JsonTypeName("SentShare")
+@JsonSubTypes({@JsonSubTypes.Type(name = "InPlace", value = InPlaceSentShare.class)})
+@Immutable
+public class SentShare extends Resource {
+    /** Creates an instance of SentShare class. */
+    public SentShare() {}
+}
