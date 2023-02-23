@@ -18,7 +18,6 @@ import com.azure.analytics.purview.sharing.models.ReceivedShare;
 import com.azure.analytics.purview.sharing.models.ReferenceNameType;
 import com.azure.analytics.purview.sharing.models.SentShare;
 import com.azure.analytics.purview.sharing.models.ServiceInvitation;
-import com.azure.analytics.purview.sharing.models.Sink;
 import com.azure.analytics.purview.sharing.models.StorageAccountPath;
 import com.azure.analytics.purview.sharing.models.StoreReference;
 import com.azure.analytics.purview.sharing.models.UserInvitation;
@@ -98,7 +97,7 @@ public final class ReadmeSamples {
     }
     
     public void deleteSentShareSample() {
-        // BEGIN: com.azure.analytics.purview.sharing.deleteSentShareSample
+        // BEGIN: com.azure.analytics.purview.sharing.deleteSentShare
         SentSharesClient sentSharesClient =
                 new SentSharesClientBuilder()
                         .credential(new DefaultAzureCredentialBuilder().build())
@@ -106,7 +105,7 @@ public final class ReadmeSamples {
                         .buildClient();
         
         sentSharesClient.beginDeleteSentShare("<sent-share-id", new RequestOptions());
-        // END: com.azure.analytics.purview.sharing.deleteSentShareSample
+        // END: com.azure.analytics.purview.sharing.deleteSentShare
     }
     
     public void getAllSentSharesSample() {
@@ -232,7 +231,7 @@ public final class ReadmeSamples {
         // END: com.azure.analytics.purview.sharing.getAllDetachedReceivedShares
     }
 
-    public void attachReceivedShareSample() throws JsonMappingException, JsonProcessingException{
+    public void attachReceivedShareSample() throws JsonMappingException, JsonProcessingException {
         // BEGIN: com.azure.analytics.purview.sharing.attachReceivedShare
         ReceivedSharesClient receivedSharesClient =
                 new ReceivedSharesClientBuilder()
@@ -275,7 +274,7 @@ public final class ReadmeSamples {
     }
     
     public void getReceivedShareSample() {
-        // BEGIN: com.azure.analytics.purview.sharing.getReceivedShareSample
+        // BEGIN: com.azure.analytics.purview.sharing.getReceivedShare
         ReceivedSharesClient receivedSharesClient =
                 new ReceivedSharesClientBuilder()
                         .credential(new DefaultAzureCredentialBuilder().build())
@@ -284,11 +283,11 @@ public final class ReadmeSamples {
 
         Response<BinaryData> receivedShare =
                 receivedSharesClient.getReceivedShareWithResponse("<received-share-id>", new RequestOptions());
-        // END: com.azure.analytics.purview.sharing.getReceivedShareSmaple
+        // END: com.azure.analytics.purview.sharing.getReceivedShare
     }
 
     public void listAttachedReceivedShareSample() {
-        // BEGIN: com.azure.analytics.purview.sharing.getAllAttachedReceivedShare
+        // BEGIN: com.azure.analytics.purview.sharing.getAllAttachedReceivedShares
         ReceivedSharesClient receivedSharesClient =
                 new ReceivedSharesClientBuilder()
                         .credential(new DefaultAzureCredentialBuilder().build())
@@ -308,11 +307,11 @@ public final class ReadmeSamples {
         }
 
         ReceivedShare receivedShareResponse = receivedShare.get().toObject(InPlaceReceivedShare.class);
-        // END: com.azure.analytics.purview.sharing.getAllAttachedReceivedShare
+        // END: com.azure.analytics.purview.sharing.getAllAttachedReceivedShares
     }
     
     public void deleteReceivedShareSample() {
-        // BEGIN: com.azure.analytics.purview.sharing.deleteReceivedShareSample
+        // BEGIN: com.azure.analytics.purview.sharing.deleteReceivedShare
         ReceivedSharesClient receivedSharesClient =
                 new ReceivedSharesClientBuilder()
                         .credential(new DefaultAzureCredentialBuilder().build())
@@ -320,6 +319,6 @@ public final class ReadmeSamples {
                         .buildClient();
 
         receivedSharesClient.beginDeleteReceivedShare("<received-share-id", new RequestOptions()); 
-        // END: com.azure.analytics.purview.sharing.deleteReceivedShareSmaple
+        // END: com.azure.analytics.purview.sharing.deleteReceivedShare
     }
 }
