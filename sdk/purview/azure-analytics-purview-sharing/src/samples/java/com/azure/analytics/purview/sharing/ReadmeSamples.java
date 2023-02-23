@@ -5,6 +5,7 @@
 package com.azure.analytics.purview.sharing;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -59,7 +60,7 @@ public final class ReadmeSamples {
                 .setDescription("A sample share");
 
         StoreReference storeReference = new StoreReference()
-                .setReferenceName("/subscriptions/de06c3a0-4610-4ca0-8cbb-bbdac204bd65/resourceGroups/sender-storage-rg/providers/Microsoft.Storage/storageAccounts/providerstorage")
+                .setReferenceName("/subscriptions/de06c3a0-4610-4ca0-8cbb-bbdac204bd65/resourceGroups/provider-storage-rg/providers/Microsoft.Storage/storageAccounts/providerstorage")
                 .setType(ReferenceNameType.ARM_RESOURCE_REFERENCE);
         
         StorageAccountPath storageAccountPath = new StorageAccountPath()
@@ -67,9 +68,12 @@ public final class ReadmeSamples {
                 .setReceiverPath("shared-file-name.txt")
                 .setSenderPath("original/file-name.txt");
 
+        List<StorageAccountPath> paths = new ArrayList<>();
+        paths.add(storageAccountPath);
+        
         BlobStorageArtifact artifact = new BlobStorageArtifact()
                 .setStoreReference(storeReference)
-                .setPaths(List.of(storageAccountPath));
+                .setPaths(paths);
         
         sentShare.setArtifact(artifact);
 
@@ -117,7 +121,7 @@ public final class ReadmeSamples {
                         .buildClient();
 
         PagedIterable<BinaryData> sentShareResults = sentSharesClient.getAllSentShares(
-                        "/subscriptions/de06c3a0-4610-4ca0-8cbb-bbdac204bd65/resourceGroups/sender-storage-rg/providers/Microsoft.Storage/storageAccounts/providerstorage",
+                        "/subscriptions/de06c3a0-4610-4ca0-8cbb-bbdac204bd65/resourceGroups/provider-storage-rg/providers/Microsoft.Storage/storageAccounts/providerstorage",
                         new RequestOptions());
         
         List<SentShare> sentShares = sentShareResults.stream()
@@ -257,7 +261,7 @@ public final class ReadmeSamples {
                 .setDisplayName("my-received-share");
 
         StoreReference storeReference = new StoreReference()
-                .setReferenceName("/subscriptions/de06c3a0-4610-4ca0-8cbb-bbdac204bd65/resourceGroups/receiver-storage-rg/providers/Microsoft.Storage/storageAccounts/receiverstorage")
+                .setReferenceName("/subscriptions/de06c3a0-4610-4ca0-8cbb-bbdac204bd65/resourceGroups/consumer-storage-rg/providers/Microsoft.Storage/storageAccounts/consumerstorage")
                 .setType(ReferenceNameType.ARM_RESOURCE_REFERENCE); 
         
         BlobAccountSink sink = new BlobAccountSink()
@@ -297,7 +301,7 @@ public final class ReadmeSamples {
         RequestOptions requestOptions = new RequestOptions().addQueryParam("$orderBy", "properties/createdAt desc");
         PagedIterable<BinaryData> response =
                 receivedSharesClient.getAllAttachedReceivedShares(
-                        "/subscriptions/4D8FD81D-431D-4B1D-B46C-C770CFC034FC/resourceGroups/contoso-rg/providers/Microsoft.Storage/storageAccounts/blobAccount",
+                        "/subscriptions/de06c3a0-4610-4ca0-8cbb-bbdac204bd65/resourceGroups/consumer-storage-rg/providers/Microsoft.Storage/storageAccounts/consumerstorage",
                         requestOptions);
 
         Optional<BinaryData> receivedShare = response.stream().findFirst();
@@ -318,7 +322,7 @@ public final class ReadmeSamples {
                         .endpoint("https://<my-account-name>.purview.azure.com/share")
                         .buildClient();
 
-        receivedSharesClient.beginDeleteReceivedShare("<received-share-id", new RequestOptions()); 
+        receivedSharesClient.beginDeleteReceivedShare("<received-share-id>", new RequestOptions()); 
         // END: com.azure.analytics.purview.sharing.deleteReceivedShare
     }
 }

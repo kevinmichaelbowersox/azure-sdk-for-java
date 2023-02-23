@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import org.junit.jupiter.api.Test;
 
@@ -21,6 +22,7 @@ import com.azure.analytics.purview.sharing.models.Sink;
 import com.azure.analytics.purview.sharing.models.StoreReference;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.RequestOptions;
+import com.azure.core.http.rest.Response;
 import com.azure.core.util.BinaryData;
 import com.azure.core.util.polling.LongRunningOperationStatus;
 import com.azure.core.util.polling.PollResponse;
@@ -36,7 +38,10 @@ class ReceivedShareClientTest extends PurviewShareTestBase {
 
     @Test
     void getAllDetachedShareTest() {
-        super.createSentShareAndServiceInvitation();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
+        UUID sentShareInvitationId = UUID.fromString(testResourceNamer.randomUuid());
+
+        super.createSentShareAndServiceInvitation(sentShareId, sentShareInvitationId);
 
         RequestOptions requestOptions = new RequestOptions().addQueryParam("$orderBy", "properties/createdAt desc");
         PagedIterable<BinaryData> receivedShares = receivedSharesClient.getAllDetachedReceivedShares(requestOptions); 
@@ -50,7 +55,10 @@ class ReceivedShareClientTest extends PurviewShareTestBase {
     
     @Test
     void getReceivedShareTest() {
-        super.createSentShareAndServiceInvitation();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
+        UUID sentShareInvitationId = UUID.fromString(testResourceNamer.randomUuid());
+
+        super.createSentShareAndServiceInvitation(sentShareId, sentShareInvitationId);
 
         RequestOptions requestOptions = new RequestOptions().addQueryParam("$orderBy", "properties/createdAt desc");
         PagedIterable<BinaryData> receivedShares = receivedSharesClient.getAllDetachedReceivedShares(requestOptions); 
@@ -69,7 +77,10 @@ class ReceivedShareClientTest extends PurviewShareTestBase {
     
     @Test
     void deleteReceivedShareTest() {
-        super.createSentShareAndServiceInvitation();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
+        UUID sentShareInvitationId = UUID.fromString(testResourceNamer.randomUuid());
+
+        super.createSentShareAndServiceInvitation(sentShareId, sentShareInvitationId);
 
         RequestOptions requestOptions = new RequestOptions().addQueryParam("$orderBy", "properties/createdAt desc");
         PagedIterable<BinaryData> receivedShares = receivedSharesClient.getAllDetachedReceivedShares(requestOptions); 
@@ -86,7 +97,10 @@ class ReceivedShareClientTest extends PurviewShareTestBase {
     @Test
     void attachReceivedShareTest() {
 
-        super.createSentShareAndServiceInvitation();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
+        UUID sentShareInvitationId = UUID.fromString(testResourceNamer.randomUuid());
+
+        super.createSentShareAndServiceInvitation(sentShareId, sentShareInvitationId);
 
         RequestOptions listRequestOptions = new RequestOptions().addQueryParam("$orderBy", "properties/createdAt desc");
         PagedIterable<BinaryData> listResponse = receivedSharesClient.getAllDetachedReceivedShares(listRequestOptions);

@@ -34,7 +34,7 @@ class SentShareClientTest extends PurviewShareTestBase {
 
     @Test
     void createSentShareTest() {
-        UUID sentShareId = UUID.randomUUID();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
         SentShare sentShare = super.createSentShare(sentShareId);
 
         assertNotNull(sentShare);
@@ -44,12 +44,14 @@ class SentShareClientTest extends PurviewShareTestBase {
     @Test
     void createSentShareUserInvitation() {
 
-        UUID sentShareId = UUID.randomUUID();
-        String sentShareInvitationId = UUID.randomUUID().toString();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
+        String sentShareInvitationId = testResourceNamer.randomUuid(); 
 
         this.createSentShare(sentShareId);
 
-        UserInvitation sentShareInvitation = new UserInvitation().setTargetEmail(super.consumerEmail).setNotify(true)
+        UserInvitation sentShareInvitation = new UserInvitation()
+                .setTargetEmail(super.consumerEmail)
+                .setNotify(true)
                 .setExpirationDate(OffsetDateTime.now().plusDays(60));
 
         Response<BinaryData> invitationResponse = sentSharesClient.createSentShareInvitationWithResponse(
@@ -66,7 +68,7 @@ class SentShareClientTest extends PurviewShareTestBase {
 
     @Test
     void getSentShareTest() {
-        UUID sentShareId = UUID.randomUUID();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
         SentShare sentShare = super.createSentShare(sentShareId);
 
         SentShare retrievedSentShare = super.sentSharesClient
@@ -81,7 +83,7 @@ class SentShareClientTest extends PurviewShareTestBase {
     @Test
     void getAllSentSharesTest() {
 
-        UUID sentShareId = UUID.randomUUID();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
         SentShare sentShare = super.createSentShare(sentShareId);
 
         PagedIterable<BinaryData> sentShares = super.sentSharesClient
@@ -94,7 +96,7 @@ class SentShareClientTest extends PurviewShareTestBase {
 
     @Test
     void deleteSentShareTest() {
-        UUID sentShareId = UUID.randomUUID();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
         SentShare sentShare = super.createSentShare(sentShareId);
 
         SyncPoller<BinaryData, Void> syncPoller = super.sentSharesClient.beginDeleteSentShare(sentShareId.toString(),
@@ -106,9 +108,11 @@ class SentShareClientTest extends PurviewShareTestBase {
 
     @Test
     void createSentShareServiceInvitation() {
-        UUID sentShareId = UUID.randomUUID();
-        UUID sentShareInvitationId = UUID.randomUUID();
-        Response<BinaryData> invitationResponse = super.createSentShareAndServiceInvitation(sentShareId,
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
+        UUID sentShareInvitationId = UUID.fromString(testResourceNamer.randomUuid());
+
+        Response<BinaryData> invitationResponse = super.createSentShareAndServiceInvitation(
+                sentShareId,
                 sentShareInvitationId);
 
         ServiceInvitation invitation = invitationResponse.getValue().toObject(ServiceInvitation.class);
@@ -121,8 +125,8 @@ class SentShareClientTest extends PurviewShareTestBase {
 
     @Test
     void getSentShareServiceInvitation() {
-        UUID sentShareId = UUID.randomUUID();
-        UUID sentShareInvitationId = UUID.randomUUID();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
+        UUID sentShareInvitationId = UUID.fromString(testResourceNamer.randomUuid());
         super.createSentShareAndServiceInvitation(sentShareId, sentShareInvitationId);
 
         Response<BinaryData> invitationResponse = super.sentSharesClient.getSentShareInvitationWithResponse(
@@ -138,8 +142,8 @@ class SentShareClientTest extends PurviewShareTestBase {
 
     @Test
     void getAllSentShareServiceInvitations() {
-        UUID sentShareId = UUID.randomUUID();
-        UUID sentShareInvitationId = UUID.randomUUID();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
+        UUID sentShareInvitationId = UUID.fromString(testResourceNamer.randomUuid());
         super.createSentShareAndServiceInvitation(sentShareId, sentShareInvitationId);
 
         PagedIterable<BinaryData> invitations = super.sentSharesClient
@@ -152,10 +156,12 @@ class SentShareClientTest extends PurviewShareTestBase {
 
     @Test
     void deleteSentShareServiceInvitation() {
-        UUID sentShareId = UUID.randomUUID();
-        UUID sentShareInvitationId = UUID.randomUUID();
+        UUID sentShareId = UUID.fromString(testResourceNamer.randomUuid());
+        UUID sentShareInvitationId = UUID.fromString(testResourceNamer.randomUuid());
+
         Response<BinaryData> invitationResponse = super.createSentShareAndServiceInvitation(sentShareId,
                 sentShareInvitationId);
+        
         ServiceInvitation invitation = invitationResponse.getValue().toObject(ServiceInvitation.class);
 
         SyncPoller<BinaryData, Void> syncPoller = super.sentSharesClient.beginDeleteSentShareInvitation(

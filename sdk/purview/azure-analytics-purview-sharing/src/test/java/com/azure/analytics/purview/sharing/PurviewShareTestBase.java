@@ -55,12 +55,12 @@ class PurviewShareTestBase extends TestBase {
         this.initializeSentShareClient();
         this.initializeReceivedShareClient();
 
-        clientId = Configuration.getGlobalConfiguration().get("AZURE_CLIENT_ID");
-        targetActiveDirectoryId = Configuration.getGlobalConfiguration().get("AZURE_TENANT_ID");
-        targetObjectId = Configuration.getGlobalConfiguration().get("TARGET_OBJECT_ID");
-        providerStorageAccountResourceId = Configuration.getGlobalConfiguration().get("PROVIDER_STORAGE_RESOURCE_ID");
-        consumerStorageAccountResourceId = Configuration.getGlobalConfiguration().get("CONSUMER_STORAGE_RESOURCE_ID");
-        consumerEmail = Configuration.getGlobalConfiguration().get("CONSUMER_EMAIL");
+        clientId = Configuration.getGlobalConfiguration().get("AZURE_CLIENT_ID","6a2919d0-880a-4ed8-B50d-7abe4d74291c");
+        targetActiveDirectoryId = Configuration.getGlobalConfiguration().get("AZURE_TENANT_ID", "4653a7b2-02ff-4155-8e55-2d0c7f3178a1");
+        targetObjectId = Configuration.getGlobalConfiguration().get("TARGET_OBJECT_ID", "68700464-B46c-4ec0-88ff-6061da36da69");
+        providerStorageAccountResourceId = Configuration.getGlobalConfiguration().get("PROVIDER_STORAGE_RESOURCE_ID", "/subscriptions/de06c3a0-4610-4ca0-8cbb-bbdac204bd65/resourceGroups/provider-storage-rg/providers/Microsoft.Storage/storageAccounts/providerstorage");
+        consumerStorageAccountResourceId = Configuration.getGlobalConfiguration().get("CONSUMER_STORAGE_RESOURCE_ID", "/subscriptions/de06c3a0-4610-4ca0-8cbb-bbdac204bd65/resourceGroups/consumer-storage-rg/providers/Microsoft.Storage/storageAccounts/consumerstorage");
+        consumerEmail = Configuration.getGlobalConfiguration().get("CONSUMER_EMAIL", "consumer@contoso.com");
     }
 
     protected SentShare createSentShare(UUID uuid) {
